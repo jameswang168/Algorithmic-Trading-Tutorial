@@ -1,6 +1,7 @@
 import pandas
 import matplotlib
-import matplotlib.finance
+#import matplotlib.finance
+import mpl_finance
 import matplotlib.pyplot as plt
 
 matplotlib.style.use('ggplot')
@@ -28,7 +29,7 @@ def stockPricePlot(ticker):
 
 	# Step 3.2. Subplot 2: candle stick plot
 	subplot2 = plt.subplot2grid((2,1), (1,0), rowspan=1, colspan=1, sharex=subplot1)
-	matplotlib.finance.candlestick_ohlc(ax=subplot2, quotes=ohlc.values, width=0.01, colorup='g', colordown='r')
+	mpl_finance.candlestick_ohlc(ax=subplot2, quotes=ohlc.values, width=0.01, colorup='g', colordown='r')
 	plt.show()
 
 stockPricePlot('AAPL')
